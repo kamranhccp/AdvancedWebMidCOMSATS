@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+</head>
+<body>
+    <lu class="std-list">
+
+    </lu>
+</body>
+<script>
+     console.log("Workiung");
+    const studentLi = document.getElementsByClassName("std-list");
+    const endpoint = "/";
+    const response =  fetch(endpoint, {
+        method: "GET"
+    });
+
+    const students = response.json();
+    console.log(`Students ${students}`);
+
+    for(i=0; i<students.length; i++) {
+        studentLi.appendChild(`<li>${students[i]}</li>`)
+    }
+</script>
+</html>
